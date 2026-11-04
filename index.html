@@ -281,6 +281,83 @@ table.pl input{font-size:15px;padding:6px 8px;max-width:110px}
 </style>
 </head>
 <body>
+<div id="splash" role="img" aria-label="Vladi Danilov · הצעת מחיר מקצועית">
+<style>
+#splash{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:radial-gradient(120% 80% at 50% 30%,#1b4a5a 0%,#10313d 55%,#0a222b 100%);color:#fff;overflow:hidden;transition:opacity .5s ease,visibility .5s;cursor:pointer;padding:24px}
+#splash.out{opacity:0;visibility:hidden}
+#splash .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);animation:spGrid 2.8s ease-out both}
+#splash .stage{position:relative;display:grid;justify-items:center;gap:14px;text-align:center}
+#splash svg{width:min(62vw,260px);height:auto;overflow:visible}
+#splash .d{fill:none;stroke-linecap:round;stroke-linejoin:round}
+#splash .roof{stroke:#ffc01e;stroke-width:7;stroke-dasharray:260;stroke-dashoffset:260;animation:spDraw .8s .15s cubic-bezier(.6,.1,.3,1) forwards}
+#splash .walls{stroke:#fff;stroke-width:5;stroke-dasharray:420;stroke-dashoffset:420;animation:spDraw .8s .45s cubic-bezier(.6,.1,.3,1) forwards}
+#splash .chim{stroke:#fff;stroke-width:5;stroke-dasharray:80;stroke-dashoffset:80;animation:spDraw .35s .9s ease-out forwards}
+#splash .door{stroke:#ffc01e;stroke-width:4;stroke-dasharray:120;stroke-dashoffset:120;animation:spDraw .4s 1s ease-out forwards}
+#splash .tile{stroke:rgba(255,192,30,.55);stroke-width:3;opacity:0;animation:spFade .3s forwards}
+#splash .ruler{opacity:0;transform-origin:40px 182px;animation:spRuler .6s 1.05s cubic-bezier(.2,.8,.3,1.2) forwards}
+#splash .doc{opacity:0;transform:translateY(40px) rotate(6deg);transform-origin:200px 150px;animation:spDoc .6s 1.2s cubic-bezier(.2,.9,.3,1.15) forwards}
+#splash .ln{stroke:#10313d;stroke-width:4;stroke-linecap:round;stroke-dasharray:60;stroke-dashoffset:60;animation:spDraw .35s forwards}
+#splash .stamp{opacity:0;transform:scale(2.2);transform-origin:222px 176px;animation:spStamp .35s 1.85s cubic-bezier(.3,1.6,.5,1) forwards}
+#splash .name{font:800 clamp(30px,9vw,44px)/1.05 "Rubik",system-ui,sans-serif;letter-spacing:.5px;direction:ltr;opacity:0;transform:translateY(12px);animation:spUp .6s 1.75s ease-out forwards}
+#splash .name span{color:#ffc01e}
+#splash .sub{font:600 16px/1.3 "IBM Plex Sans Hebrew","Rubik",sans-serif;opacity:0;animation:spUp .5s 2s ease-out forwards}
+#splash .tag{font:400 14px/1.4 "IBM Plex Sans Hebrew",sans-serif;color:rgba(255,255,255,.7);opacity:0;animation:spUp .5s 2.2s ease-out forwards}
+#splash .bar{width:120px;height:3px;border-radius:3px;background:rgba(255,255,255,.15);overflow:hidden;margin-top:6px;opacity:0;animation:spFade .3s 2.2s forwards}
+#splash .bar i{display:block;height:100%;width:0;background:#ffc01e;animation:spLoad .9s 2.3s ease-in-out forwards}
+#splash .skip{position:absolute;bottom:calc(22px + env(safe-area-inset-bottom,0px));font:500 12.5px "IBM Plex Sans Hebrew",sans-serif;color:rgba(255,255,255,.45)}
+@keyframes spDraw{to{stroke-dashoffset:0}}
+@keyframes spFade{to{opacity:1}}
+@keyframes spGrid{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:none}}
+@keyframes spRuler{from{opacity:0;transform:rotate(-25deg) translateX(-20px)}to{opacity:1;transform:none}}
+@keyframes spDoc{to{opacity:1;transform:none}}
+@keyframes spStamp{to{opacity:1;transform:scale(1)}}
+@keyframes spUp{to{opacity:1;transform:none}}
+@keyframes spLoad{to{width:100%}}
+@media (prefers-reduced-motion:reduce){#splash *{animation-duration:.01s!important;animation-delay:0s!important}}
+</style>
+<div class="grid"></div>
+<div class="stage">
+<svg viewBox="0 0 260 210" aria-hidden="true">
+  <!-- house -->
+  <path class="d chim" d="M150 58 V34 H170 V74"/>
+  <path class="d roof" d="M22 104 L118 30 L214 104"/>
+  <path class="d tile" style="animation-delay:.8s" d="M62 96 L118 54 L174 96"/>
+  <path class="d tile" style="animation-delay:.9s" d="M92 90 L118 72 L144 90"/>
+  <path class="d walls" d="M44 96 V186 H192 V96"/>
+  <path class="d door" d="M100 186 V146 Q100 138 108 138 H128 Q136 138 136 146 V186"/>
+  <!-- ruler -->
+  <g class="ruler">
+    <rect x="18" y="190" width="120" height="14" rx="3" fill="#ffc01e"/>
+    <g stroke="#10313d" stroke-width="2"><path d="M30 190v6M42 190v4M54 190v6M66 190v4M78 190v6M90 190v4M102 190v6M114 190v4M126 190v6"/></g>
+  </g>
+  <!-- quote document -->
+  <g class="doc">
+    <rect x="168" y="96" width="78" height="100" rx="7" fill="#fff"/>
+    <rect x="168" y="96" width="78" height="14" rx="7" fill="#ffc01e"/>
+    <rect x="168" y="103" width="78" height="7" fill="#ffc01e"/>
+    <path class="ln" style="animation-delay:1.5s" d="M182 124 H232"/>
+    <path class="ln" style="animation-delay:1.6s" d="M182 138 H226"/>
+    <path class="ln" style="animation-delay:1.7s" d="M182 152 H214"/>
+    <g class="stamp"><circle cx="222" cy="176" r="15" fill="#10313d"/><text x="222" y="182.5" text-anchor="middle" font-family="Rubik,Arial,sans-serif" font-weight="800" font-size="18" fill="#ffc01e">₪</text></g>
+  </g>
+</svg>
+<div class="name">Vladi <span>Danilov</span></div>
+<div class="sub">הצעת מחיר מקצועית</div>
+<div class="tag">מודדים · מתמחרים · סוגרים עבודה</div>
+<div class="bar"><i></i></div>
+</div>
+<div class="skip">הקש כדי להיכנס</div>
+<script>
+(function(){
+  var el=document.getElementById("splash");
+  var off=false; try{ var pr=JSON.parse(localStorage.getItem("bq_profile")||"null"); off=!!(pr&&pr.settings&&pr.settings.noSplash); }catch(e){}
+  function hide(){ if(!el||el.classList.contains("out")) return; el.classList.add("out"); setTimeout(function(){ el&&el.remove(); },600); }
+  if(off){ el.remove(); return; }
+  el.addEventListener("click",hide);
+  setTimeout(hide,3400);
+})();
+</script>
+</div>
 
 <header class="top gut">
   <div class="top-in">
@@ -453,7 +530,7 @@ const DEF_TEMPLATES = [
 ];
 const STATUSES = ["טיוטה","נשלחה","אושרה","נדחתה","בוצעה"];
 const DEF_SETTINGS = {
-  biz:"", owner:"", phone:"", email:"", bizId:"", address:"",
+  biz:"Vladi Danilov", owner:"", phone:"", email:"", bizId:"", address:"",
   vat:18, vatExempt:false, validity:14, minCharge:"", nextNum:1, showCost:false, followDays:3,
   timeline:"", warranty:"", payment:"",
   payments:[{name:"מקדמה בחתימה",pct:"30"},{name:"באמצע העבודה",pct:"40"},{name:"בסיום ומסירה",pct:"30"}],
@@ -1146,6 +1223,7 @@ function vSettings(){
     <div class="grid2">${f("validity","תוקף הצעה (ימים)","14","n","numeric")}${f("followDays","תזכורת לחזור ללקוח אחרי (ימים)","3","n","numeric")}</div>
     <div class="grid2">${f("numPrefix","קידומת למספר הצעה","למשל: ד׳ או AB")}<div class="tiny muted" style="align-self:end">כשכמה עובדים מוציאים הצעות, קידומת שונה לכל אחד מונעת מספרים כפולים.</div></div>
     <div><div class="lbl">עלויות ורווח (פנימי בלבד)</div>${seg("settings.showCost",["false","true"],String(!!s.showCost),["כבוי","הצג עלות ורווח"])}</div>
+    <div><div class="lbl">אנימציית פתיחה</div>${seg("settings.noSplash",["false","true"],String(!!s.noSplash),["מופעלת","כבויה"])}</div>
   </div></section>
   <section class="sec"><div class="sec-h"><h2>ברירות מחדל להצעות חדשות</h2></div><div class="sec-b">
     ${f("timeline","זמן ביצוע")}${f("warranty","אחריות")}${f("payment","הערה לתנאי תשלום")}
@@ -1502,6 +1580,7 @@ document.addEventListener("click", async e=>{
     const path=sg.dataset.seg, val=sg.dataset.val, q=cur();
     if(path==="settings.vatExempt"){ S.settings.vatExempt = val==="true"; saveProfile(); }
     else if(path==="settings.showCost"){ S.settings.showCost = val==="true"; saveProfile(); }
+    else if(path==="settings.noSplash"){ S.settings.noSplash = val==="true"; saveProfile(); }
     else if(path==="item.flag"){ const it=item(S.editItem); if(it){ it.flag=val; it.edited=true; saveProfile(); } }
     else if(path==="meas.mode"){ S.sheet.m.mode=val; renderSheet(); return; }
     else if(path==="tplqty"){ S.sheet.keepQty = val==="yes"; renderSheet(); return; }
